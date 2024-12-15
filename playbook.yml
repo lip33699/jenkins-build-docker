@@ -12,3 +12,4 @@
       apt:
         name: curl  # Installer curl
         state: present  # S'assurer que curl est installé
+
