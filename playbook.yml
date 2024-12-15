@@ -2,14 +2,14 @@
 - name: Playbook de test Ansible
   hosts: all  # Applique ce playbook à tous les hôtes définis dans hosts.yml
   become: yes  # Exécuter les tâches avec des privilèges d'administrateur (sudo)
+
   tasks:
     - name: Mettre à jour la liste des paquets
       apt:
-        update_cache: yes  # Met à jour le cache des paquets sur les hôtes
-        upgrade: dist  # Met à jour les paquets installés sur les hôtes
+        update_cache: yes  # Met à jour le cache des paquets
+        upgrade: dist  # Met à jour les paquets installés
 
-    - name: Installer un paquet (ex: curl)
+    - name: Installer le paquet curl
       apt:
-        name: curl  # Installer curl
+        name: curl  # Nom du paquet à installer
         state: present  # S'assurer que curl est installé
-
